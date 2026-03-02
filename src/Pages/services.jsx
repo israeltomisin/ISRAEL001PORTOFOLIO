@@ -1,20 +1,17 @@
 import React from 'react'
 
-
-const Home = () => {
+const services = () => {
   return (
-    <section className="home-section">
-      <div className="home-background">
-        <div className="home-flex">
-          <div className="home-content">
-            <h1>Turning Your Ideas Into Powerful Software</h1>
-            <p>From concept to launch, we build fast, secure, and scalable applications tailored to startups and growing businesses.</p>
-            <div className="btn">
-              <button className="btn-primary">Get Started</button>
-              <button className="btn-secondary">Learn More</button>
-            </div>
+    <section className="services-section">
+      <div className="services-background">
+        <div className="services-flex">
+          <div className="services-content">
+            <h1>We Build Smart Digital Solutions That Drive Results</h1>
+            <p>I help businesses and brands turn ideas into powerful digital products. From modern        websites and web applications to branding and user-focused design, every solution is crafted for performance, growth, and real impact.</p>
+            <button className="btn-primary">🚀 Start a Project</button>
+            <button className="btn-secondary">📞 Contact Us</button>
           </div>
-            <div className="home-img">
+            <div className="services-img">
               <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c29mdHdhcmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Software Development" />
             </div>
         </div>
@@ -48,38 +45,30 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="Why">
-        <div className="why">
-          <h3>Why Choose Us?</h3>
-          <p>We don’t just build software — we build reliable digital solutions that help your business grow, scale, and succeed in a competitive world.</p>
+      <div className="How">
+        <div className="how-content">
+          <h3>How we work</h3>
+          <p>Our process is structured to deliver clarity, creativity, and measurable results at every stage.</p>
         </div>
-        <div className="why-flex">
-          <div className="why-card">
-            <h4>👨‍💻 Expert Developers </h4>
-            <p>I write clean, efficient, and maintainable code that ensures long-term performance and scalability.</p>
+        <div className="how-flex">
+          <div className="how-card">
+            <h4>🔍 Discovery</h4>
+            <p>We begin by understanding your vision, goals, and challenges. Through research and strategy sessions, we define a clear roadmap tailored to your business needs.</p>
           </div>
-          <div className="why-card">
-            <h4>⚡ Agile & Fast Delivery</h4>
-            <p>I follow agile methodologies to deliver projects quickly without sacrificing quality.
-            Through continuous collaboration and feedback, we adapt to your needs and keep your project moving forward.</p>
+          <div className="how-card">
+            <h4>🎨 Design</h4>
+            <p>We create modern, user-focused designs that align with your brand identity. Every detail is crafted to ensure a seamless and engaging experience.</p>
           </div>
-          <div className="why-card">
-            <h4>📈 Scalable Architecture</h4>
-            <p>Our solutions are designed to grow with your business, ensuring long-term success and adaptability.</p>
+          <div className="how-card">
+            <h4>💻 Development</h4>
+            <p>Using reliable and scalable technologies, we transform designs into high-performing digital solutions built for speed, security, and growth.</p>
           </div>
-          <div className="why-card">
-            <h4>🔐 Secure & Reliable</h4>
-            <p>Security and stability are at the core of everything I build.
-            I implement best practices to ensure your application is safe, dependable, and built to perform consistently.</p>
-          </div>
-          <div className="why-card">
-            <h4>🏆 Proven Results</h4>
-            <p>We focus on delivering measurable results.
-            From improved user experience to business growth, our solutions are designed to create real impact and long-term success.</p>
+          <div className="how-card">
+            <h4>🚀 Launch & Support</h4>
+            <p>We ensure a smooth launch and provide ongoing support, updates, and improvements to keep your digital product performing at its best.</p>
           </div>
         </div>
       </div>
-
       <div className="Ready">
         <div className="ready">
           <h3>Let’s Turn Your Idea Into Reality 🚀</h3>
@@ -90,6 +79,7 @@ const Home = () => {
       </div>
     </section>
   )
+
 }
 
-export default Home
+export default services
