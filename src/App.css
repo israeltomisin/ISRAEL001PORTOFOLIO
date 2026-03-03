@@ -32,17 +32,68 @@ nav .logo img{
 nav h3{
     font-size: 24px;
 }
-nav ul{
+nav .nav-links{
     list-style: none;
     display: flex;
 }
-nav ul li{
+nav .hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+nav .hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+nav .hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+nav .hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+nav .hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+nav .nav-links li{
     margin-left: 20px;
     cursor: pointer;
     transition: color 0.3s ease;
 }
-nav ul li:hover{
+
+ 
+nav .nav-links li:hover{
     color: #fff;
+}
+
+@media (max-width: 768px) {
+
+  nav .hamburger {
+    display: flex;
+  }
+
+  nav .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #211ea0;
+    padding: 20px;
+    width: 200px;
+    border-radius: 8px;
+  }
+
+  nav .nav-links.active {
+    display: flex;
+  }
 }
 
 /* .home-section{
@@ -88,6 +139,7 @@ nav ul li:hover{
     margin-right: 10px;
     transition: background 0.3s ease;
     border-radius: 7px;
+    text-decoration: none;
 }
 .home-section .home-background .home-flex .home-content .btn-primary:hover{
     background: #f0f0f0;
@@ -103,6 +155,7 @@ nav ul li:hover{
     border: 1px solid #fff;
     cursor: pointer;
     transition: background 0.3s ease, color 0.3s ease;
+    text-decoration: none;
 }
 .home-section .home-background .home-flex .home-content .btn-secondary:hover{
     background: #fff;
@@ -239,6 +292,7 @@ nav ul li:hover{
     max-width: 800px;
     text-align: center;
     margin: 0 auto;
+    margin-bottom: 20px;
 }
 .Ready .ready .btn-primary{
     background: #fff;
@@ -250,6 +304,7 @@ nav ul li:hover{
     margin-top: 20px;
     transition: background 0.3s ease;
     border-radius: 7px;
+    text-decoration: none;
 }
 .Ready .ready .btn-primary:hover{
     background: #f0f0f0;
@@ -266,6 +321,7 @@ nav ul li:hover{
     border: 1px solid #fff;
     cursor: pointer;
     transition: background 0.3s ease, color 0.3s ease;
+    text-decoration: none;
 }
 .Ready .ready .btn-secondary:hover{
     background: #fff;
@@ -346,6 +402,7 @@ nav ul li:hover{
     margin-top: 20px;
     transition: background 0.3s ease;
     border-radius: 7px;
+    text-decoration: none;
 }
 .about-section .about-all .about-flex .mission .btn-primary:hover{
     background: #1a239b;
@@ -433,6 +490,7 @@ nav ul li:hover{
     line-height: 1.5;
     max-width: 800px;
     margin: 0 auto;
+    margin-bottom: 2%;
 }
 .services-section .services-background .services-flex .services-content .btn-primary{
     background: #fff;
@@ -444,6 +502,7 @@ nav ul li:hover{
     margin-top: 20px;
     transition: background 0.3s ease;
     border-radius: 7px;
+    text-decoration: none;
 }
 .services-section .services-background .services-flex .services-content .btn-primary:hover{
     background: #f0f0f0;
@@ -457,6 +516,7 @@ nav ul li:hover{
     padding: 10px 20px;
     font-size: 17px;
     border-radius: 7px;
+    text-decoration: none;
     border: 1px solid #fff;
     cursor: pointer;
     transition: background 0.3s ease, color 0.3s ease;
@@ -559,6 +619,7 @@ nav ul li:hover{
     margin-top: 20px;
     transition: background 0.3s ease;
     border-radius: 7px;
+    text-decoration: none;
 }
 .contact-section .contact-content .btn-primary:hover{
     background: #1a239b;
@@ -575,6 +636,7 @@ nav ul li:hover{
     border: 1px solid #212ea9;
     cursor: pointer;
     transition: background 0.3s ease, color 0.3s ease;
+    text-decoration: none;
 }
 .contact-section .contact-content .btn-secondary:hover{
     background: #212ea9;
@@ -773,6 +835,7 @@ footer .footer-flex .footer3 ul li:hover{
     .home-section .home-background .home-flex .home-content {
         max-width: 100%;
         margin-bottom: 20px;
+        padding: 100px 10px
     }
     .home-section .home-background .home-flex .home-img img {
         width: 100%;
@@ -780,6 +843,9 @@ footer .footer-flex .footer3 ul li:hover{
     /* Services */
     .Services .services-flex {
         flex-direction: column;
+    }
+    .Services .services-flex .services-card{
+        width: 100%;
     }
     /* Services */
     /* Why */
@@ -793,6 +859,7 @@ footer .footer-flex .footer3 ul li:hover{
         margin-top: 10px;
     }
     /* Ready */
+    /* About */
     .about-section .about-all .about-flex {
         flex-direction: column;
     }
@@ -803,15 +870,78 @@ footer .footer-flex .footer3 ul li:hover{
     .about-section .about-all .about-flex .mission-mage img {
         width: 100%;
     }
-    
-    /* form */
-    .contact-section .contact-flex {
+    .about-section .team .meet-flex {
         flex-direction: column;
     }
-  .form-row {
-    flex-direction: column;
-    gap: 0;
-  }
+    .about-section .team .meet-flex .meet-card {
+        width: 100%;
+    }
+    /* About */
+    /* Services */
+    .services-section .services-background .services-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    .services-section .services-background .services-flex .services-content {
+        max-width: 100%;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+    .services-section .services-background .services-flex .services-img img {
+        width: 100%;
+    }
+    .How .how-flex {
+        flex-direction: column;
+    }
+    .How .how-flex .how-card {
+        width: 100%;
+    }
+    /* Services */
+    /* Contact */
+    .contact-section .contact-content {
+        padding: 100px 10px 20px;
+    }
+    .contact-section .contact-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    .contact-section .contact-flex .form-container {
+        width: 100%;
+    }
+    .form-row {
+        flex-direction: column;
+    }
+    .form-group label{
+        text-align: left;
+    }
+    .contact-section .contact-flex .get-in {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    /* Contact */
+    /* Footer */
+    footer .footer-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    footer .footer-flex .footer1,
+    footer .footer-flex .footer2,
+    footer .footer-flex .footer3 {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    footer .footer-flex .footer2 h5 {
+        text-align: left;
+    }
+    footer .footer-flex .footer2 ul li {
+        text-align: left;
+    }
+    footer .footer-flex .footer3 h5 {
+        text-align: left;
+    }
+    /* Footer */
+
+
     
 
 }

@@ -1,31 +1,40 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 
 const Home = () => {
   return (
     <section className="home-section">
-      <div className="home-background">
+      <div className="home-background"data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="2000">
         <div className="home-flex">
-          <div className="home-content">
+          <div className="home-content" data-aos="fade-right"
+                data-aos-easing="linear"
+                data-aos-duration="2000">
             <h1>Turning Your Ideas Into Powerful Software</h1>
             <p>From concept to launch, we build fast, secure, and scalable applications tailored to startups and growing businesses.</p>
             <div className="btn">
-              <button className="btn-primary">Get Started</button>
-              <button className="btn-secondary">Learn More</button>
+              <Link to="/contact" className="btn-primary">Get Started</Link>
+              <Link to="/services" className="btn-secondary">Our Services</Link>
             </div>
           </div>
-            <div className="home-img">
+            <div className="home-img" data-aos="fade-left"
+                data-aos-easing="linear"
+                data-aos-duration="2000">
               <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c29mdHdhcmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" alt="Software Development" />
             </div>
         </div>
       </div>
 
+
       <div className="Services">
-        <div className="services">
+        <div className="services" data-aos="fade-up">
           <h3>Our Services</h3>
           <p>We deliver innovative digital solutions that help businesses grow, scale, and stay ahead in today’s competitive market. From idea to execution, we turn your vision into reality.</p>
         </div>
-        <div className="services-flex">
+        <div className="services-flex" data-aos="fade-right">
           <div className="services-card">
             <h4>💻 Web Development</h4>
             <p>We build fast, secure, and scalable websites and web applications tailored to your business goals.
@@ -47,13 +56,13 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      <div className="Why">
+       
+      <div className="Why" data-aos="fade-up">
         <div className="why">
           <h3>Why Choose Us?</h3>
           <p>We don’t just build software — we build reliable digital solutions that help your business grow, scale, and succeed in a competitive world.</p>
         </div>
-        <div className="why-flex">
+        <div className="why-flex" data-aos="fade-left">
           <div className="why-card">
             <h4>👨‍💻 Expert Developers </h4>
             <p>I write clean, efficient, and maintainable code that ensures long-term performance and scalability.</p>
@@ -80,12 +89,12 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="Ready">
+      <div className="Ready" data-aos="fade-up">
         <div className="ready">
           <h3>Let’s Turn Your Idea Into Reality 🚀</h3>
           <p>Your next big project deserves expert execution. We design, build, and launch digital products that stand out and perform.</p>
-          <button className="btn-primary">Contact Us</button>
-          <button className="btn-secondary">Learn More</button>
+          <Link to="/contact" className="btn-primary">Contact Us</Link>
+          <Link to="/services" className="btn-secondary">Learn More</Link>
         </div>
       </div>
     </section>

@@ -3,38 +3,44 @@ import { useState, } from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocation } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 const contact = () => {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    emailAddress: '',
-    projectDetails: ''
-  });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
+ const [name, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [projectDetails, setProjectDetails] = useState("");
 
-  const handleSubmit = (e) => {
+  const backendUrl = 'http://localhost:3000';
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    // Handle form submission here (e.g., send data to a backend or API)
+    try {
+      console.log("Form submitted:", { name, email, projectDetails });
+      const req = await axios.post(`${backendUrl}/send-email`, {name, email, projectDetails});
+      if (req.status >=200 && req.status < 400) {
+        alert('Email Sent!')
+        setFullName("");
+        setEmail("");
+        setProjectDetails("");
+      } else {};
+    } catch (error) {
+      alert(error?.response?.data?.message || error?.message || 'An error occured!')
+    }
   };
 
   return (
     <section className="contact-section">
-        <div className="contact-content">
+        <div className="contact-content" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="2000">
           <h3>Ready to Turn Your Idea Into Reality?</h3>
           <p>Every great product starts with a conversation. Share your vision, and let’s craft a digital experience that sets your brand apart and drives real results.</p>
-          <button className="btn-primary">Work With Me</button>
-          <button className="btn-secondary">Schedule a Call</button>
+          <Link to="/services" className="btn-primary">Work With Me</Link>
+          <button className="btn-secondary" onClick={() => window.open('https://calendly.com/israeltomisin001/30min', '_blank')}>📞 Schedule a Call</button>
         </div>
-
-    <div className="contact-flex">
-        <div className="form-container"> 
+    <div className="contact-flex" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="2000">
+        <div className="form-container" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="2000"> 
             <form onSubmit={handleSubmit} className="contact-form">
                 <div className="form-row">
                     <div className="form-group">
@@ -44,8 +50,8 @@ const contact = () => {
                         id="fullName"
                         name="fullName"
                         placeholder="Israel Ogbon"
-                        value={formData.fullName}
-                        onChange={handleChange}
+                        value={name}
+                        onChange={(e) => setFullName(e.target.value)}
                         required
                         />
                     </div>
@@ -56,8 +62,8 @@ const contact = () => {
                         id="emailAddress"
                         name="emailAddress"
                         placeholder="israeltomisin001@gmail.com"
-                        value={formData.emailAddress}
-                        onChange={handleChange}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         required
                         />
                     </div>
@@ -69,8 +75,8 @@ const contact = () => {
                         id="projectDetails"
                         name="projectDetails"
                         placeholder="Tell us briefly about your project..."
-                        value={formData.projectDetails}
-                        onChange={handleChange}
+                        value={projectDetails}
+                        onChange={(e) => setProjectDetails(e.target.value)}
                         rows="6"
                         required
                         ></textarea>
@@ -81,7 +87,7 @@ const contact = () => {
                     </button>
             </form>
         </div>
-        <div className="get-in">
+        <div className="get-in" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="2000">
             <h4>Get in Touch</h4>
             <p>Have a project in mind or need help bringing your ideas to life? I’d love to hear from you. Whether it’s a website, branding, or a custom digital solution, let’s discuss how we can work together.
 
