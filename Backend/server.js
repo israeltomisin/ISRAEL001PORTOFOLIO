@@ -7,16 +7,9 @@ import nodemailer from "nodemailer";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
-
+const PORT = 3000;
 
 // Middleware
-const cors = require("cors");
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -83,5 +76,5 @@ app.post('/send-email', async (req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+  console.log(`✅ Server is running at https://israel001portofolio.onrender.com:${PORT}`);
 });
