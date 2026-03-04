@@ -12,7 +12,7 @@ const contact = () => {
   const [email, setEmail] = useState("");
   const [projectDetails, setProjectDetails] = useState("");
 
-  const backendUrl = 'http://localhost:3000';
+  const backendUrl = 'https://israel001portofolio.onrender.com';
 
   const handleSubmit = async (e) => {
     e.preventDefault();

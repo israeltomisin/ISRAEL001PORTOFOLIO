@@ -798,6 +798,8 @@ footer .footer-flex .footer2 ul li{
     transition: color 0.3s ease;
     text-align: left;
     line-height: 1.5;
+    text-decoration: none;
+    color: #fff;
 }
 footer .footer-flex .footer2 ul li:hover{
     color: #fff;

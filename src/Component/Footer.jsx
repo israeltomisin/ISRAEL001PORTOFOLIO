@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -11,10 +12,10 @@ const Footer = () => {
             <div className="footer2" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="2000">
                 <h5>Quick links</h5>
                 <ul>
-                    <li><a href="/" style={{color:"#fff", textDecoration:"none"}}>Home</a></li>
-                    <li><a href="/about" style={{color:"#fff", textDecoration:"none"}}>About</a></li>
-                    <li><a href="/services" style={{color:"#fff", textDecoration:"none"}}>Services</a></li>
-                    <li><a href="/contact" style={{color:"#fff", textDecoration:"none"}}>Contact</a></li>
+                    <li><Link to="/" style={{textDecoration:"none", color:"#fff", textAlign:"left"}}>Home</Link></li>
+                    <li><Link to="/about" style={{textDecoration:"none", color:"#fff", textAlign:"left"}}>About</Link></li>
+                    <li><Link to="/services" style={{textDecoration:"none", color:"#fff", textAlign:"left"}}>Services</Link></li>
+                    <li><Link to="/contact" style={{textDecoration:"none", color:"#fff", textAlign:"left"}}>Contact</Link></li>
                 </ul>
             </div>
             <div className="footer3" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="2000">
