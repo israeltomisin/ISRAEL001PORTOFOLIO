@@ -12,14 +12,14 @@ const contact = () => {
   const [email, setEmail] = useState("");
   const [projectDetails, setProjectDetails] = useState("");
 
-  const backendUrl = 'https://israel001portofolio.onrender.com';
+//   const backendUrl = 'https://israel001portofolio.onrender.com';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle form submission here (e.g., send data to a backend or API)
     try {
       console.log("Form submitted:", { name, email, projectDetails });
-      const req = await axios.post(`${backendUrl}/send-email`, {name, email, projectDetails});
+      const req = await axios.post(`/api/send-email`, {name, email, projectDetails});
       if (req.status >=200 && req.status < 400) {
         alert('Email Sent!')
         setFullName("");
