@@ -86,6 +86,7 @@ nav .nav-links li:hover{
     top: 70px;
     right: 0;
     background: #211ea0;
+    line-height: 2;
     padding: 20px;
     width: 200px;
     border-radius: 8px;
@@ -843,6 +844,10 @@ footer .footer-flex .footer3 ul li:hover{
         width: 100%;
     }
     /* Services */
+    .services-section .services-background .services-flex .services-content .btn-primary,
+    .services-section .services-background .services-flex .services-content .btn-secondary {
+        margin-top: 10px;
+    }
     .Services .services-flex {
         flex-direction: column;
     }
